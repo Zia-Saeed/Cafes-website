@@ -1,0 +1,398 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, img {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-between;
+}
+
+.team-member {
+    flex: 1;
+    text-align: center;
+    margin: 20px;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Media queries for responsive design (adjust as needed) */
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+/* styles.css */
+
+/* ... (previous CSS rules) */
+
+/* Additional styles for an advanced look */
+
+/* Header */
+header {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #444;
+}
+
+/* Main content */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Team section */
+.team-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    flex: 1;
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h3 {
+    font-size: 1.8rem;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+/* Media queries for responsive design (adjust as needed) */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .team-member {
+        flex-basis: calc(50% - 40px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .team-member {
+        flex-basis: 100%;
+    }
+}
+/* styles.css */
+
+/* ... (previous CSS rules) */
+
+/* Additional styles for an advanced look */
+
+/* Header */
+header {
+    /* ... (previous styles) */
+    background-image: linear-gradient(to bottom right, #222, #444);
+}
+
+/* Navigation */
+nav ul {
+    /* ... (previous styles) */
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    /* ... (previous styles) */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+/* Main content */
+main {
+    /* ... (previous styles) */
+}
+
+.about-content h2 {
+    /* ... (previous styles) */
+    font-weight: 700;
+}
+
+.about-content p {
+    /* ... (previous styles) */
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.about-image img {
+    /* ... (previous styles) */
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Team section */
+.team-members {
+    /* ... (previous styles) */
+}
+
+.team-member {
+    /* ... (previous styles) */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.team-member img {
+    /* ... (previous styles) */
+    border: 4px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.team-member h3 {
+    /* ... (previous styles) */
+    color: #333;
+}
+
+.team-member p {
+    /* ... (previous styles) */
+    color: #777;
+}
+
+/* Footer */
+footer {
+    /* ... (previous styles) */
+    background-image: linear-gradient(to bottom, #222, #444);
+}
+
+/* Media queries for responsive design (adjust as needed) */
+@media screen and (max-width: 768px) {
+    /* ... (previous styles) */
+
+    .team-member {
+        /* ... (previous styles) */
+        flex-basis: calc(50% - 40px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* ... (previous styles) */
+
+    .about-content h2 {
+        /* ... (previous styles) */
+        font-size: 2rem;
+    }
+
+    .about-content p {
+        /* ... (previous styles) */
+        font-size: 1.1rem;
+    }
+
+    .team-member {
+        /* ... (previous styles) */
+        flex-basis: 100%;
+    }
+}

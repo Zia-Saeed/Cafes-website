@@ -1,0 +1,81 @@
+{% extends "bootstrap/base.html"  %}
+{% include "header.html" %}
+{% block content %}
+<h1 class="text-center">London Cafes</h1>
+<p class="text-center">The best work and study-friendly cafes in London. Find venues with free and reliable Wi-Fi hotspots, ample power sockets, and comfy seating areas.</p>
+<h2 style="color:golden;" class="text-center my-4">Work Friendly Cafes</h2>
+{% if current_user.id == 1 %}
+<div class="clearfix text-center" style="margin-top:20px; margin-bottom:20px">
+  <a class="btn btn-warning float-right col-3 text-dark " style="font-size: 17px"   href="{{url_for('add_new_cafe')}}">Add New Cafe</a>
+</div>
+{% endif %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <li style="color:Green; font-size:20px;">{{ message }}</li>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{% for cafe in cafes %}
+<div class="card mb-3 container text-center" style="width:450px; height:100%; background-color:grey" id="card">
+
+  <div class="card-body"  >
+    <a href="{{url_for('cafe_detail', id=cafe.id)}}">
+      <img src="{{cafe.img_url}}" class="card-img-top" alt="...">
+    </a>
+    <h5 class="card-title">{{cafe.name}}</h5>
+    <p class="card-text">{{cafe.location}}</p>
+
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p>Coffee Price : {{cafe.coffee_price}}</p>
+    <a style="text-decoration:none; color:#008080" href="{{cafe.map_url}}" target="_blank">Location</a>
+  </div>
+  {% if current_user.id == 1 %}
+    <div class="clearfix text-center" style="margin-top:20px; margin-bottom:20px">
+       <a class="btn btn-warning float-right col-3 text-dark " style="font-size: 17px"   href="{{url_for('delete_cafe', id=cafe.id)}}">Delete</a>
+    </div>
+    <div class="clearfix " style="margin-top:20px; margin-bottom:20px">
+      <a class="btn btn-warning float-right col-3 text-dark " style="font-size: 17px; color:#385170;"  href="{{url_for('update_cafe', id=cafe.id)}}">Update Cafe</a>
+    </div>
+  {% endif %}
+  </div>
+<hr>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include "footer.html" %}
+{% endblock %}

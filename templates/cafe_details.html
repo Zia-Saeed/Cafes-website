@@ -1,0 +1,110 @@
+{% extends "bootstrap/base.html"  %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='cafe_details.css')}}">
+  <div>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{cafe.img_url}}" height="800" width="2000"/>
+        </div>
+      </div>
+    </div>
+  <hr>
+  <table class="my-5">
+    <tr>
+      <th>Coffee Shop</th>
+      <th>Has Sockets</th>
+      <th>Has Toilet</th>
+      <th>Has WiFi</th>
+      <th>Can Take Calls</th>
+      <th>Seats</th>
+      <th>Coffee Price</th>
+    </tr>
+    <tr>
+      <td>{{cafe.name}}</td>
+      {% if cafe.has_sockets == 1 %}
+      <td>Yes</td>
+      {% elif cafe.has_sockets == 0 %}
+      <td>No</td>
+      {% else %}
+      <td>{{cafe.has_sockets}}</td>
+      {% endif %}
+      {% if cafe.has_toilet == 1 %}
+      <td>Yes</td>
+      {% elif cafe.has_toilet == 0 %}
+      <td>No</td>
+      {% else %}
+      <td>{{cafe.has_toilet}}</td>
+      {% endif %}
+      {% if cafe.has_wifi == 1 %}
+      <td>Yes</td>
+      {% elif cafe.has_wifi == 0 %}
+      <td>No</td>
+      {% else %}
+      <td>{{cafe.has_wifi}}</td>
+      {% endif %}
+      {% if cafe.can_take_calls == 1 %}
+      <td>Yes</td>
+      {% elif cafe.can_take_calls == 0 %}
+      <td>No</td>
+      {% else %}
+      <td>{{cafe.can_take_calls}}</td>
+      {% endif %}
+      <td>{{cafe.seats}}</td>
+      <td>{{cafe.coffee_price}}</td>
+    </tr>
+  </table>
+
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <li style="color:green; font-size:20px;">{{ message }}</li>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+{{ ckeditor.load() }}
+{{ ckeditor.config(name='body') }}
+{{ wtf.quick_form(form, novalidate=True, button_map={"submit": "secondary"}) }}
+
+<div class="col-lg-8 col-md-10 mx-auto my-5 comment">
+  {% for review in cafe.review_cafe: %}
+  <ul class="commentList">
+    <li>
+      <div class="commenterImage">
+      </div>
+      <div style="font-family: 'Roboto', sans-serif;" >
+        <div style="margin-bottom:20px;">
+          <img style="border-radius:100px" src="{{review.user_review.name|gravatar}}" width="30" height="30"/>
+          <small style="font-size:20px; font-family: 'Roboto', sans-serif;" class="date sub-text"> Posted by {{ review.user_review.name}}</small>
+        </div>
+
+        {% if current_user.id == review.user_review.id %}
+          {{review.review|safe}}
+        <a style="text-decoration:none; color:#142d4c;:hover:text-decoration:underline;" href="{{ url_for('delete_review', id=review.post_id) }}">delete</a>
+      </div>
+      <div style="font-family: 'Roboto', sans-serif;">
+        {% elif current_user.id == 1 %}
+          {{review.review|safe}}
+          <a style="text-decoration:none; color:#142d4c;:hover:text-decoration:underline;" href="{{ url_for('delete_review', id=review.post_id) }}">delete</a>
+        </div>
+      <div style="font-family: 'Roboto', sans-serif;">
+        {% else %}
+          {{review.review|safe}}
+      </div>
+        {% endif %}
+      <div>
+        <small style="font-size:10px; font-family: 'Roboto', sans-serif; " class="date sub-text">Date: {{review.date}}</small>
+        </div>
+    </li>
+  </ul>
+  {% endfor %}
+</div>
+  </div>
+<div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+
+{% extends "bootstrap/base.html"  %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+{% block content %}
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://architecturesideas.com/wp-content/uploads/2018/06/modern-cafe-architecture-design-77.jpg" height="700" width="2000"/>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto content">
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    <li style="color:red; font-size:20px;">{{ message }}</li>
+                  {% endfor %}
+                {% endif %}
+              {% endwith %}
+              {{ wtf.quick_form(login, novalidate=True, button_map={"submit": "secondary"}) }}
+            </div>
+          </div>
+        </div>
+{% include "footer.html" %}
+{% endblock %}

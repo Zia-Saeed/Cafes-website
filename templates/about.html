@@ -1,0 +1,45 @@
+{% extends "bootstrap/base.html"  %}
+{% include "header.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='about.css')}}">
+<div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.pixelstalk.net/wp-content/uploads/images2/Cafe_wallpaper_1920x1080.jpg" height="700" width="2000"/>
+        </div>
+    </div>
+</div>
+<hr>
+    <main>
+        <section class="about">
+            <div class="about-content">
+                <h2>About Us</h2>
+                <p>Welcome to Our Website! We are a team of innovative and creative individuals who are passionate about designing and developing exceptional digital experiences.</p>
+                <p>Our mission is to blend cutting-edge technology with stunning visuals to craft websites that leave a lasting impression on our audience. From user interface design to responsive layouts, we focus on every detail to create a seamless and enjoyable user journey.</p>
+            </div>
+            <div class="about-image">
+                <img src="team-in-action.jpg" alt="Team in Action">
+            </div>
+        </section>
+        <section class="team">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="team-member1.jpg" alt="Team Member 1">
+                    <h3>John Doe</h3>
+                    <p>Founder & Lead Developer</p>
+                    <p>It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.</p>
+                </div>
+                <div class="team-member">
+                    <img src="team-member2.jpg" alt="Team Member 2">
+                    <h3>Jane Smith</h3>
+                    <p>Founder & Partner</p>
+                    <p>It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% include "footer.html" %}
+{% endblock %}
+
+
